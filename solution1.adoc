@@ -1,0 +1,15 @@
+= Task 1 - Das Experiment
+
+== Task Description
+
+Create HashMap<Integer, Integer>. The first thread adds elements into the map, the other go along the given map and sum the values. Threads should work before catching ConcurrentModificationException. Try to fix the problem with ConcurrentHashMap and Collections.synchronizedMap().
+
+* What has happened after simple Map implementation exchanging?
+* How it can be fixed in code?
+* Try to write your custom ThreadSafeMap with synchronization and without.
+
+Run your samples with different versions of Java (6, 8, and 10, 11) and measure the performance. Provide a simple report to your mentor.
+
+== Solution Description
+
+We created a `testMap()` function, which accepts any Map and tests it for concurrent operations. We've added a try-catch block around each call to .forEach() on the map and we're now using `isInterrupted()` to check the interrupt status of threads. We've also added two custom thread-safe map implementations – one with synchronization and one without.
