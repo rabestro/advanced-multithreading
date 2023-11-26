@@ -1,0 +1,23 @@
+= Task 3: Where's Your Bus, Dude?
+
+== Task Description
+
+The objective of this task is to implement a message bus using the Producer-Consumer pattern with the following requirements:
+
+1. Implement an asynchronous message bus without using any queue implementation from `java.util.concurrent`.
+2. Implement a producer that generates and posts random messages to the queue.
+3. Implement a consumer that consumes messages on specific topics and logs the message payload to the console.
+
+(Optional)
+4. The application should create several consumers and producers that run in parallel.
+
+== Solution Description
+
+The solution involves creating the following components:
+
+1. The `Message` class representing a message with a `topic` and a `payload`.
+2. A custom `MessageBus` queue class that implements the Producer-Consumer pattern.
+3. A `Producer` class that generates and posts random messages to the queue.
+4. A `Consumer` class that listens to specific topics and consumes messages from the queue.
+
+To demonstrate the functionality, we create an application with multiple producers and consumers running in parallel.
