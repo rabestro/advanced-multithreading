@@ -1,0 +1,25 @@
+= Task 4: Blocking Object Pool
+
+== Task Description
+
+The goal of this task is to create a simple object pool with support for a multithreaded environment. The pool should block if it has no available items or is full. The requirements are as follows:
+
+* Implement a `BlockingObjectPool` class with a constructor that accepts the size of the pool as an argument.
+* Implement a `get()` method that returns an object from the pool or blocks if the pool is empty.
+* Implement a `take(Object object)` method that puts an object back into the pool or blocks if the pool is full.
+* Ensure that the implementation is thread-safe and uses any blocking approach.
+
+== Solution Description
+
+Our solution uses a `LinkedBlockingQueue` to implement the object pool. When the `BlockingObjectPool` is created, the queue is initialized with the specified size and filled with new `Object` instances. The `LinkedBlockingQueue` provides blocking behavior internally, ensuring that our implementation is thread-safe and efficient.
+
+Here is the implementation of the `BlockingObjectPool` class:
+
+[source,java]
+----
+include::src/main/java/epam/task4/BlockingObjectPool.java[]
+----
+
+The `get()` method retrieves an object from the pool and blocks if the pool is empty until an object becomes available. Similarly, the `take(...)` method puts an object into the pool and blocks if the pool is full until there is space available. Both methods use the blocking methods of the `LinkedBlockingQueue`, namely `take()` and `put(...)`, which handle blocking and signaling internally.
+
+If an interruption occurs during the `get()` or `take(...)` operations, the interrupted status of the current thread is preserved, allowing the caller to handle the interruption accordingly.
