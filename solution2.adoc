@@ -1,0 +1,25 @@
+= Task 2 - Deadlocks
+
+== Task Description
+
+Create three threads:
+
+* 1st thread is infinitely writing random number to the collection;
+* 2nd thread is printing sum of the numbers in the collection;
+* 3rd is printing square root of sum of squares of all numbers in the collection.
+
+Make these calculations thread-safe using synchronization block. Fix the possible deadlock.
+
+== Solution Description
+
+The code creates three threads:
+
+. `writerThread`: This thread continuously writes random numbers to the numbers collection.
+. `sumThread`: This thread calculates and prints the sum of all the numbers in the numbers collection.
+. `sqrtThread`: This thread calculates and prints the square root of the sum of the squares of the numbers in the numbers collection.
+
+To prevent deadlocks, we use a synchronized block with a single lock object, numbersLock. All threads synchronize on this lock object when accessing the shared numbers collection, making the code thread-safe.
+
+In this example, we're not introducing any potential deadlocks because we are only using a single lock object for synchronization. Deadlocks typically occur when two or more threads acquire locks in different orders and end up waiting for each other forever. Since we're using only one lock, there is no chance for a deadlock scenario in this code.
+
+The threads will run for 10 seconds before being interrupted by the main thread, which signals them to stop.
