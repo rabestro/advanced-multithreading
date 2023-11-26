@@ -1,0 +1,37 @@
+= Task 6: Producer-Consumer Multi-threading
+
+== Task Description
+
+Create a multi-threading console application that starts two threads for producer and consumer respectively. The producer generates random numbers, and the consumer calculates their total average. There must be a graceful shutdown, allowing threads to correctly finish their work. When both producer and consumer are stopped, print to the console the number of operations performed per second (ops/sec). This task should be implemented using two approaches:
+
+1. Classic model: Use a non-blocking Queue implementation (e.g., LinkedList) to share data between producer and consumer threads. Use the synchronized block, wait()/notify() methods to guard the queue from simultaneous access.
+2. Concurrency: Use java.util.concurrent package classes for synchronization (BlockingQueue, locks, etc.).
+
+After both versions are complete, compare their performance (ops/sec).
+
+== Solution Description
+
+The solution implements two versions of the Producer-Consumer problem:
+
+1. In the Classic Model, we use `synchronized`, `wait()`, and `notify()` to implement a shared `LinkedList` as a queue between the producer and consumer threads.
+2. In the Concurrency Model, we utilize a `BlockingQueue` from the `java.util.concurrent` package to handle synchronization between the producer and consumer threads.
+
+Both implementations start two threads: one producer and one consumer. The producer generates random numbers and adds them to the shared queue, while the consumer consumes the numbers from the same queue.
+
+After running both implementations, you can compare their performance (ops/sec).
+
+Here is the source code for each approach:
+
+Classic Model:
+
+[source,java]
+----
+include::../../main/java/epam/task6/CClassicModel.java[]
+----
+
+Concurrency Model:
+
+[source,java]
+----
+include::../../main/java/epam/task6/ConcurrencyModel.java[]
+----

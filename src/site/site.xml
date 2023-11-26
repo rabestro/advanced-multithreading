@@ -26,6 +26,15 @@
       <item name="Maven" href="https://maven.apache.org/"/>
     </links>
 
+    <menu name="Solutions">
+      <item name="Das Experiment" href="solution1.html"/>
+      <item name="Deadlocks" href="solution2.html"/>
+      <item name="Where's Your Bus, Dude?" href="solution3.html"/>
+      <item name="Blocking Object Pool" href="solution4.html"/>
+      <item name="Currency Exchanger" href="solution5.html"/>
+      <item name="Producer-Consumer Multi-threading" href="solution6.html"/>
+    </menu>
+
     <menu name="Examples">
       <item name="APT Format" href="format.html"/>
       <item name="FAQ" href="faq.html"/>
