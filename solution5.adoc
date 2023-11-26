@@ -1,0 +1,44 @@
+= Task 5: Currency Exchanger
+
+== Task Description
+
+This task involves creating an application for managing currency exchange operations. The specific requirements include:
+
+* Designing models for handling currencies, user accounts, and exchange rates.
+* Storing data for user accounts in separate files.
+* Separating application functionality into Data Access Objects (DAO), service layer, and utilities.
+* Providing a module for high-level operations, such as managing accounts, currencies, and exchange rates.
+* Creating sample accounts and currencies with predefined exchange rates.
+* Ensuring thread-safety for concurrent currency exchanges on a single account.
+* Using the `ExecutorService` for thread management.
+* Developing custom exceptions for error reporting. No handling of runtime exceptions.
+* Validating inputs, such as the existence of an account, sufficiency of currency amount, and so on.
+* Logging information about application activities and conversion results.
+
+== Solution Description
+
+Solution for task 5 involves creating several components including various models such as `Currency`, `UserAccount`, and `ExchangeRate`. A custom file-based storage utility for user accounts, diverse data access, service, and utility classes for managing accounts, currencies, and exchange rates are created.
+
+A separate main function is used to illustrate how these all components interact with the `ExecutorService` to perform concurrent operations in a thread-safe manner by creating and managing multiple threads that simulate simultaneous currency exchanges for a single user account.
+
+The following are the main components of the application:
+
+. The **Currency** class represents a currency with a unique code.
+. The **UserAccount** class represents a user account with multiple balances in different currencies.
+. The **ExchangeRate** class represents an exchange rate between two currencies.
+. The **UserDao** class provides data access methods for user accounts.
+. The **ExchangeService** class provides high-level operations such as performing a currency exchange.
+. The **ExchangeRateUtil** class provides a utility method for converting an amount from one currency to another.
+
+Classes can be found in the package `epam.task5`.
+
+[source,java]
+----
+include::src/main/java/epam/task5/Currency.java[]
+include::src/main/java/epam/task5/UserAccount.java[]
+include::src/main/java/epam/task5/ExchangeRate.java[]
+include::src/main/java/epam/task5/UserDao.java[]
+include::src/main/java/epam/task5/ExchangeService.java[]
+include::src/main/java/epam/task5/ExchangeRateUtil.java[]
+include::src/main/java/epam/task5/Main.java[]
+----
