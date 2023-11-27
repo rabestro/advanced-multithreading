@@ -34,11 +34,11 @@ Classes can be found in the package `epam.task5`.
 
 [source,java]
 ----
-include::src/main/java/epam/task5/Currency.java[]
-include::src/main/java/epam/task5/UserAccount.java[]
-include::src/main/java/epam/task5/ExchangeRate.java[]
-include::src/main/java/epam/task5/UserDao.java[]
-include::src/main/java/epam/task5/ExchangeService.java[]
-include::src/main/java/epam/task5/ExchangeRateUtil.java[]
-include::src/main/java/epam/task5/Main.java[]
+include::../../main/java/epam/task5/Currency.java[]
+include::../../main/java/epam/task5/UserAccount.java[]
+include::../../main/java/epam/task5/ExchangeRate.java[]
+include::../../main/java/epam/task5/UserDao.java[]
+include::../../main/java/epam/task5/ExchangeService.java[]
+include::../../main/java/epam/task5/ExchangeRateUtil.java[]
+include::../../main/java/epam/task5/Main.java[]
 ----

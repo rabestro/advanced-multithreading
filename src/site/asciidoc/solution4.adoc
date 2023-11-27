@@ -17,7 +17,7 @@ Here is the implementation of the `BlockingObjectPool` class:
 
 [source,java]
 ----
-include::src/main/java/epam/task4/BlockingObjectPool.java[]
+include::../../main/java/epam/task4/BlockingObjectPool.java[]
 ----
 
 The `get()` method retrieves an object from the pool and blocks if the pool is empty until an object becomes available. Similarly, the `take(...)` method puts an object into the pool and blocks if the pool is full until there is space available. Both methods use the blocking methods of the `LinkedBlockingQueue`, namely `take()` and `put(...)`, which handle blocking and signaling internally.
